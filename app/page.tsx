@@ -3,6 +3,7 @@ import Form from "./Form";
 
 async function getPosts() {
   const url = "https://fullstack-next-prisma-tailwind-ka02srpb5-cormacpujals.vercel.app"
+  // const res = await fetch(`${process.env.BASE_URL}/api/getPosts`);
   const res = await fetch(`${url}/api/getPosts`);
   if(!res.ok) {
    console.log(res);
