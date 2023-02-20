@@ -11,7 +11,7 @@ async function getPosts() {
   }
   return res.json()
   */
- return {};
+ return [];
 }
 
 export default async function Home() {
