@@ -1,19 +1,19 @@
 import Link from "next/link"
 import Form from "./Form";
 
+// return [{"id":1,"title":"Cats","content":"Cats are the best ","published":false},{"id":3,"title":"Dogs","content":null,"published":false},{"id":4,"title":"test","content":null,"published":false},{"id":5,"title":"working?","content":null,"published":false},{"id":6,"title":"test","content":null,"published":false},{"id":7,"title":"another test 4 u","content":null,"published":false}];
 async function getPosts() {
   const url = `https://${process.env.VERCEL_URL}/api/getPosts`;
-  //const url = `https://fullstack-next-prisma-tailwind-nvcsxgraj-cormacpujals.vercel.app/api/getPosts`;
+  //const url = `https://fullstack-next-prisma-tailwind.vercel.app/api/getPosts`;
   try {
     const res = await fetch(url);
+    if(!res.ok) {
+      console.log(`ERROR: fetch ${url} -> result: ${res}`);
+    }
+    return res.json();
   } catch (e) {
-   console.log(`ERROR: fetch ${url}:`, e);
-  return [{"id":1,"title":"Cats","content":"Cats are the best ","published":false},{"id":3,"title":"Dogs","content":null,"published":false},{"id":4,"title":"test","content":null,"published":false},{"id":5,"title":"working?","content":null,"published":false},{"id":6,"title":"test","content":null,"published":false},{"id":7,"title":"another test 4 u","content":null,"published":false}];
+    console.log(`ERROR: fetch ${url}:`, e);
   }
-  // if(!res.ok) {
-  //  console.log(`ERROR: fetch ${url} -> ${res}`);
-  // }
-  //return res.json();
   return [];
 }
 
