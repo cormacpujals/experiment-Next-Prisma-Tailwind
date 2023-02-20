@@ -3,7 +3,7 @@ import Form from "./Form";
 
 
 async function getPosts() {
-  const res = await fetch(`https://${process.env.VERCEL_URL}/api/getPosts`);
+  const res = await fetch(`${location.origin}/api/getPosts`);
   if(!res.ok) {
    console.log(res) 
   }
