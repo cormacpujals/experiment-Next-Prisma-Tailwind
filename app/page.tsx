@@ -1,17 +1,13 @@
 import Link from "next/link"
 import Form from "./Form";
 
-let port = process.env["PORT"] || "8080";
-
 async function getPosts() {
-  /*
-  const res = await fetch(`http://localhost:${port}/api/getPosts`);
+  const url = "https://fullstack-next-prisma-tailwind-ka02srpb5-cormacpujals.vercel.app"
+  const res = await fetch(`${url}/api/getPosts`);
   if(!res.ok) {
    console.log(res) 
   }
   return res.json()
-  */
- return [];
 }
 
 export default async function Home() {
