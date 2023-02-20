@@ -10,7 +10,7 @@ async function getPosts() {
     url = `https://${process.env.VERCEL_URL}/api/getPosts`;
 
     if(!res.ok) {
-      console.log(`ERROR: fetch ${url} -> result not ok: ${res}`);
+      console.log(`ERROR: fetch ${url} -> result not ok: |${JSON.stringify(res)}|`);
       return [{id: 1, title: 'res.ok error', content: `${url} -> ${JSON.stringify(res)}`}];
     }
     return res.json();
