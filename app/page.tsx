@@ -8,7 +8,7 @@ async function getPosts() {
   try {
     const res = await fetch(url);
     if(!res.ok) {
-      console.log(`ERROR: fetch ${url} -> result: ${res}`);
+      console.log(`ERROR: fetch ${url} -> result not ok: ${res}`);
     }
     return res.json();
   } catch (e) {
