@@ -1,9 +1,10 @@
 import Link from "next/link"
 import Form from "./Form";
 
+let port = process.env["PORT"] || "8080";
 
 async function getPosts() {
-  const res = await fetch(`${location.origin}/api/getPosts`);
+  const res = await fetch(`http://localhost:${port}/api/getPosts`);
   if(!res.ok) {
    console.log(res) 
   }
