@@ -2,7 +2,7 @@ import Link from "next/link"
 import Form from "./Form";
 
 async function getPosts() {
-  const url = `https:${process.env.VERCEL_URL}/api/getPosts`;
+  const url = `https://${process.env.VERCEL_URL}/api/getPosts`;
   const res = await fetch(url);
   if(!res.ok) {
    console.log(res);
