@@ -5,14 +5,14 @@ async function getPosts() {
   const url = "https://fullstack-next-prisma-tailwind-ka02srpb5-cormacpujals.vercel.app"
   const res = await fetch(`${url}/api/getPosts`);
   if(!res.ok) {
-   console.log(res) 
+   console.log(res);
   }
-  return res.json()
+  return res.json();
 }
 
 export default async function Home() {
   const data : {id: number, title: string, content: string}[] = await getPosts()
-  console.log(data)
+  console.log(data);
   return (
     <main className="px-4 py-4">
       <Form />
